@@ -8,6 +8,7 @@ import PortfolioNavbarHero from './component/Navbar'
 import About from './component/About'
 import ServicesSection from './component/ServicesSection'
 import SkillsSection from './component/SkillsSection'
+import ScrollToTop from './component/ScrollToTop'
 
 const App = () => {
   return (
@@ -22,6 +23,8 @@ const App = () => {
      <SkillsSection />
      <ContactSection />
      <Footer />
+     <ScrollToTop />
+     
     </>
   )
 }
