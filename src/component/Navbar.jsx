@@ -182,10 +182,10 @@ export default function PortfolioNavbarHero() {
             <div className="space-y-6 animate-slideInRight">
               <div className="space-y-2">
                 <p className="text-[#854FEE] text-lg font-medium">Hello, I'm</p>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
                   Sheeri Fatima
                   <span
-                    className="block mt-2"
+                    className="block mt-2 "
                     style={{ color: "#854FEE", fontSize: 48 }}
                   >
                     Web Developer
