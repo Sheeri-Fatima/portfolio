@@ -63,7 +63,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <p className="text-sm text-gray-400">
-        © {currentYear} · Made with 💜 by Sheeri Fatima
+        © {currentYear} · Made with by Sheeri Fatima
       </p>
     </footer>
   );
