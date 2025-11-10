@@ -140,7 +140,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-0.5">Phone</h3>
-                <p className="text-base sm:text-lg text-gray-300">+91 9170612430</p>
+                <p className="text-base sm:text-lg text-gray-300">+91 6392546467</p>
               </div>
             </div>
 
@@ -151,7 +151,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-0.5">Email</h3>
-                <p className="text-base sm:text-lg text-gray-300">imamsadan009@gmail.com</p>
+                <p className="text-base sm:text-lg text-gray-300">shizasiddique918@gmail.com</p>
               </div>
             </div>
 

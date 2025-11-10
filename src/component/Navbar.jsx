@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Menu, X, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { Link } from "react-scroll"; // ✅ for smooth scroll
 
 export default function PortfolioNavbarHero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,25 +13,76 @@ export default function PortfolioNavbarHero() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center gap-2">
-            <div className="flex items-center">
-              {/* <Globe className="w-10 h-10 text-blue-900" /> */}
-              <div className="ml-2">
-                <img
-                  src="/images/logo2.png"
-                  className="w-full h-12 lg:h-16 object-cover"
-                  alt=""
-                />
+              <div className="flex items-center">
+                <div className="ml-2">
+                  <img
+                    src="/images/logo2.png"
+                    className="w-full h-12 lg:h-16 object-cover"
+                    alt="logo"
+                  />
+                </div>
               </div>
             </div>
-          </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="hover:text-[#854FEE] transition-colors">Home</a>
-              <a href="#about" className="hover:text-[#854FEE] transition-colors">About</a>
-              <a href="#services" className="hover:text-[#854FEE] transition-colors">Services</a>
-              <a href="#projects" className="hover:text-[#854FEE] transition-colors">Projects</a>
-              <a href="#contact" className="hover:text-[#854FEE] transition-colors">Contact</a>
+              <Link
+                to="home"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="cursor-pointer hover:text-[#854FEE] transition-colors"
+              >
+                Home
+              </Link>
+              <Link
+                to="about"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="cursor-pointer hover:text-[#854FEE] transition-colors"
+              >
+                About
+              </Link>
+              <Link
+                to="services"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="cursor-pointer hover:text-[#854FEE] transition-colors"
+              >
+                Services
+              </Link>
+              <Link
+                to="projects"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="cursor-pointer hover:text-[#854FEE] transition-colors"
+              >
+                Projects
+              </Link>
+              <Link
+                to="contact"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="cursor-pointer hover:text-[#854FEE] transition-colors"
+              >
+                Contact
+              </Link>
+
+              {/* ✨ Hire Me Button */}
+              <button
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="bg-[#854FEE] hover:bg-[#6d38d8] text-white px-5 py-2 rounded-lg font-medium transition-colors shadow-md hover:shadow-[#854FEE]/40"
+              >
+                Hire Me
+              </button>
             </div>
 
             {/* Mobile menu button */}
@@ -49,11 +101,69 @@ export default function PortfolioNavbarHero() {
         {isMenuOpen && (
           <div className="md:hidden bg-black border-t border-gray-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#home" className="block px-3 py-2 hover:bg-[#854FEE]/10 rounded transition-colors">Home</a>
-              <a href="#about" className="block px-3 py-2 hover:bg-[#854FEE]/10 rounded transition-colors">About</a>
-              <a href="#skills" className="block px-3 py-2 hover:bg-[#854FEE]/10 rounded transition-colors">Skills</a>
-              <a href="#projects" className="block px-3 py-2 hover:bg-[#854FEE]/10 rounded transition-colors">Projects</a>
-              <a href="#contact" className="block px-3 py-2 hover:bg-[#854FEE]/10 rounded transition-colors">Contact</a>
+              <Link
+                to="home"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="block px-3 py-2 hover:bg-[#854FEE]/10 rounded transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="about"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="block px-3 py-2 hover:bg-[#854FEE]/10 rounded transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                to="skills"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="block px-3 py-2 hover:bg-[#854FEE]/10 rounded transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Skills
+              </Link>
+              <Link
+                to="projects"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="block px-3 py-2 hover:bg-[#854FEE]/10 rounded transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Projects
+              </Link>
+              <Link
+                to="contact"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="block px-3 py-2 hover:bg-[#854FEE]/10 rounded transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+
+              {/* ✨ Hire Me Button (Mobile) */}
+              <button
+                onClick={() => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  setIsMenuOpen(false);
+                }}
+                className="w-full mt-3 bg-[#854FEE] hover:bg-[#6d38d8] text-white px-4 py-2 rounded-lg font-medium transition-colors shadow-md"
+              >
+                Hire Me
+              </button>
             </div>
           </div>
         )}
@@ -64,13 +174,11 @@ export default function PortfolioNavbarHero() {
         id="home"
         className="pt-2 min-h-screen flex items-center relative overflow-hidden"
       >
-        {/* Animated background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#854FEE] via-black to-black opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            
-            {/* Left Content (Animated from Right) */}
+            {/* Left Content */}
             <div className="space-y-6 animate-slideInRight">
               <div className="space-y-2">
                 <p className="text-[#854FEE] text-lg font-medium">Hello, I'm</p>
@@ -113,41 +221,19 @@ export default function PortfolioNavbarHero() {
                 ))}
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 pt-6">
-                <button className="px-8 py-3 bg-[#854FEE] hover:bg-[#7340d4] text-white rounded-lg font-medium transition-colors flex items-center gap-2">
-                  View Projects
-                  <ExternalLink size={18} />
-                </button>
-                <button className="px-8 py-3 border-2 border-[#854FEE] text-[#854FEE] hover:bg-[#854FEE] hover:text-white rounded-lg font-medium transition-colors">
-                  Contact Me
-                </button>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex gap-4 pt-6">
+              {/* ✨ Single CTA Button */}
+              <div className="pt-6">
                 <a
-                  href="#"
-                  className="w-12 h-12 border border-gray-700 rounded-lg flex items-center justify-center hover:border-[#854FEE] hover:text-[#854FEE] transition-colors"
+                  href="/resume.pdf" // <-- replace with your resume file path
+                  download
+                  className="inline-block px-8 py-3 bg-[#854FEE] hover:bg-[#6d38d8] text-white rounded-lg font-medium transition-colors shadow-lg hover:shadow-[#854FEE]/40"
                 >
-                  <Github size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="w-12 h-12 border border-gray-700 rounded-lg flex items-center justify-center hover:border-[#854FEE] hover:text-[#854FEE] transition-colors"
-                >
-                  <Linkedin size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="w-12 h-12 border border-gray-700 rounded-lg flex items-center justify-center hover:border-[#854FEE] hover:text-[#854FEE] transition-colors"
-                >
-                  <Mail size={20} />
+                  Download Resume
                 </a>
               </div>
             </div>
 
-            {/* Right Content (Terminal Window) */}
+            {/* Right Content */}
             <div className="relative animate-slideInRight delay-200">
               <div className="relative rounded-xl overflow-hidden shadow-2xl border border-gray-800">
                 <div className="bg-gradient-to-br from-gray-900 to-black p-6">

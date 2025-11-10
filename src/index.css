@@ -14,3 +14,8 @@
 .animate-slideInRight {
   animation: slideInRight 1.2s ease-out forwards;
 }
+
+
+html {
+  scroll-behavior: smooth;
+}

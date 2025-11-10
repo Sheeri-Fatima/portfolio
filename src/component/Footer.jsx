@@ -1,69 +1,70 @@
 import React from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  // Smooth Scroll Handler
+  const handleScroll = (e, targetId) => {
+    e.preventDefault();
+    const target = document.querySelector(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
-        
-        {/* Brand / Logo Section */}
-        <div>
-          <h2 className="text-2xl font-semibold text-white">Sheeri Fatima</h2>
-          <p className="text-sm mt-2 text-gray-400">
-            Front-End Developer | React | Tailwind CSS
-          </p>
-        </div>
+    <footer className="bg-black text-gray-300 py-10 text-center">
+      {/* Name / Title */}
+      <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3">
+        Sheeri Fatima
+      </h2>
 
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
-          <ul className="space-y-2">
-            <li><a href="#home" className="hover:text-white transition">Home</a></li>
-            <li><a href="#about" className="hover:text-white transition">About</a></li>
-            <li><a href="#projects" className="hover:text-white transition">Projects</a></li>
-            <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
-          </ul>
-        </div>
+      {/* Divider Line */}
+      <div className="w-1/3 md:w-1/4 mx-auto border-t border-gray-500 mb-6"></div>
 
-        {/* Social Links */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-3">Connect With Me</h3>
-          <div className="flex justify-center md:justify-start space-x-5">
-            <a
-              href="mailto:yourmail@example.com"
-              className="hover:text-white transition"
-              aria-label="Email"
-            >
-              <Mail size={22} />
-            </a>
-            <a
-              href="https://github.com/yourgithub"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition"
-              aria-label="GitHub"
-            >
-              <Github size={22} />
-            </a>
-            <a
-              href="https://linkedin.com/in/yourlinkedin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={22} />
-            </a>
-          </div>
-        </div>
+      {/* Navigation Links */}
+      <div className="flex justify-center flex-wrap gap-6 md:gap-10 text-lg font-medium mb-4">
+        <a
+          href="#home"
+          onClick={(e) => handleScroll(e, "#home")}
+          className="hover:text-[#854FEE] transition"
+        >
+          Home
+        </a>
+        <a
+          href="#about"
+          onClick={(e) => handleScroll(e, "#about")}
+          className="hover:text-[#854FEE] transition"
+        >
+          About
+        </a>
+        <a
+          href="#services"
+          onClick={(e) => handleScroll(e, "#services")}
+          className="hover:text-[#854FEE] transition"
+        >
+          Services
+        </a>
+        <a
+          href="#projects"
+          onClick={(e) => handleScroll(e, "#projects")}
+          className="hover:text-[#854FEE] transition"
+        >
+          Projects
+        </a>
+        <a
+          href="#contact"
+          onClick={(e) => handleScroll(e, "#contact")}
+          className="hover:text-[#854FEE] transition"
+        >
+          Contact
+        </a>
       </div>
 
-      {/* Divider */}
-      <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
-        © {currentYear} Sheeri Fatima. All Rights Reserved.
-      </div>
+      {/* Copyright */}
+      <p className="text-sm text-gray-400">
+        © {currentYear} · Made with 💜 by Sheeri Fatima
+      </p>
     </footer>
   );
 };
