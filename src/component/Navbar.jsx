@@ -224,7 +224,7 @@ export default function PortfolioNavbarHero() {
               {/* ✨ Single CTA Button */}
               <div className="pt-6">
                 <a
-                  href="/resume.pdf" // <-- replace with your resume file path
+                  href="/images/Sheeri-Fatima1-Resume.pdf" // <-- replace with your resume file path
                   download
                   className="inline-block px-8 py-3 bg-[#854FEE] hover:bg-[#6d38d8] text-white rounded-lg font-medium transition-colors shadow-lg hover:shadow-[#854FEE]/40"
                 >
