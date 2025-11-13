@@ -71,14 +71,14 @@ export default function ProjectsSection() {
               <h3 className="text-white text-lg font-semibold mb-2">
                 {project.title}
               </h3>
-              <a
+              {/* <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#854FEE] hover:underline text-sm"
               >
                 View Source Code
-              </a>
+              </a> */}
             </div>
           ))}
         </div>
